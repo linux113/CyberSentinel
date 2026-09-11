@@ -10,9 +10,11 @@ import { ActiveIncidents } from '../components/dashboard/ActiveIncidents';
 import { getDashboardStats, getAssets, getIncidents } from '../services/api';
 import { DashboardStats, Asset, Incident } from '../lib/types';
 import { useNavigate } from 'react-router-dom';
-import { Zap } from 'lucide-react';
+import { Zap, Activity, Shield } from 'lucide-react';
 import { simulateThreat } from '../services/simulation';
 import { useApp } from '../store/AppContext';
+import { CyberButton, RainbowBorderButton, StatusButton, ShimmerButton } from '@/components/ui/21-button';
+import { PremiumCard, GlassCard } from '@/components/ui/21-card';
 
 export function Dashboard() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
@@ -28,20 +30,25 @@ export function Dashboard() {
 
   useEffect(()=>{ load(); const id = setInterval(load, 5000); return ()=>clearInterval(id); },[]);
 
-  if (!stats) return <div className="text-sentinel-muted p-8">Security data loading...</div>;
+  if (!stats) return <div className="text-sentinel-muted p-8 flex items-center gap-2"><div className="w-4 h-4 rounded-full border-2 border-sky-400 border-t-transparent animate-spin" /> Security data loading...</div>;
 
   return (
     <div className="space-y-6">
-      {/* Header */}
+      {/* Header - 21.dev style */}
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-[24px] font-bold tracking-tight">Security Overview</h1>
-          <p className="text-[13px] text-sentinel-muted mt-1">What is happening? How serious? What is affected? What should I do?</p>
+          <h1 className="text-[26px] font-bold tracking-tight flex items-center gap-3">
+            Security Overview
+            <span className="text-[10px] px-2 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 font-bold tracking-widest">21.DEV PREMIUM</span>
+          </h1>
+          <p className="text-[13px] text-sentinel-muted mt-1 flex items-center gap-2">
+            What is happening? How serious? What is affected? What should I do?
+            <span className="px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06] text-[10px] font-mono">MONITOR → RESPOND</span>
+          </p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="hidden md:flex items-center gap-2 text-[11px] px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.06]">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-subtle" /> Live monitoring • {stats.assetsMonitored} assets • {stats.activeThreats} active threats
-          </div>
+          <StatusButton status="online">Live monitoring • {stats.assetsMonitored} assets • {stats.activeThreats} threats</StatusButton>
+          <CyberButton variant="primary" icon={<Activity className="w-3.5 h-3.5" />}>Live</CyberButton>
         </div>
       </div>
 
@@ -53,38 +60,64 @@ export function Dashboard() {
         <div className="col-span-12 lg:col-span-7 space-y-6">
           <ThreatSummary counts={stats.threatCounts} onSelect={(sev)=>navigate(`/alerts?severity=${sev}`)} />
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-              <div className="text-[11px] uppercase tracking-wide text-sentinel-muted font-semibold">Active Incidents</div>
-              <div className="text-[24px] font-bold mt-1">{stats.activeIncidents}</div>
-              <div className="text-[11px] text-sentinel-dim mt-1">{incidents.filter(i=>i.status==='NEW').length} new • {incidents.filter(i=>i.status==='INVESTIGATING').length} investigating</div>
-            </div>
-            <div className="p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-              <div className="text-[11px] uppercase tracking-wide text-sentinel-muted font-semibold">Vulnerabilities</div>
-              <div className="text-[24px] font-bold mt-1">{stats.vulnerabilities.critical + stats.vulnerabilities.high + stats.vulnerabilities.medium + stats.vulnerabilities.low}</div>
-              <div className="text-[11px] text-sentinel-dim mt-1">{stats.vulnerabilities.critical} critical • {stats.vulnerabilities.high} high</div>
-            </div>
+            <PremiumCard gradient="violet" className="p-4">
+              <div className="flex items-center justify-between">
+                <div className="text-[11px] uppercase tracking-wide text-sentinel-muted font-semibold">Active Incidents</div>
+                <Shield className="w-4 h-4 text-violet-400" />
+              </div>
+              <div className="text-[28px] font-bold mt-2">{stats.activeIncidents}</div>
+              <div className="text-[11px] text-sentinel-dim mt-1 flex gap-2">
+                <span className="px-2 py-0.5 rounded-full bg-white/[0.04] border border-white/[0.06]">{incidents.filter(i=>i.status==='NEW').length} new</span>
+                <span className="px-2 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-300">{incidents.filter(i=>i.status==='INVESTIGATING').length} investigating</span>
+              </div>
+            </PremiumCard>
+            <PremiumCard gradient="sky" className="p-4">
+              <div className="flex items-center justify-between">
+                <div className="text-[11px] uppercase tracking-wide text-sentinel-muted font-semibold">Vulnerabilities</div>
+                <Activity className="w-4 h-4 text-sky-400" />
+              </div>
+              <div className="text-[28px] font-bold mt-2">{stats.vulnerabilities.critical + stats.vulnerabilities.high + stats.vulnerabilities.medium + stats.vulnerabilities.low}</div>
+              <div className="text-[11px] text-sentinel-dim mt-1 flex gap-2">
+                <span className="px-2 py-0.5 rounded-full bg-red-500/10 border border-red-500/20 text-red-300">{stats.vulnerabilities.critical} critical</span>
+                <span className="px-2 py-0.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-300">{stats.vulnerabilities.high} high</span>
+              </div>
+            </PremiumCard>
           </div>
         </div>
       </div>
 
-      {/* Demo Controls */}
-      <div className="p-4 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/20 flex flex-wrap items-center gap-3">
-        <div className="flex items-center gap-2 text-[12px] font-semibold text-amber-300">
-          <Zap className="w-4 h-4" /> DEMO MODE — Simulate Threats:
+      {/* Demo Controls - 21.dev style with CyberButton */}
+      <PremiumCard gradient="amber" className="p-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="flex items-center gap-2 text-[12px] font-semibold text-amber-300">
+            <div className="w-6 h-6 rounded-lg bg-amber-500/20 border border-amber-500/30 flex items-center justify-center">
+              <Zap className="w-3.5 h-3.5" />
+            </div>
+            DEMO MODE — Simulate Threats:
+            <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300">21.DEV</span>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {[
+              { label: 'Port Scan', type: 'NETWORK_SCAN' },
+              { label: 'Brute Force', type: 'BRUTE_FORCE' },
+              { label: 'Suspicious Login', type: 'SUSPICIOUS_LOGIN' },
+              { label: 'Critical Vuln', type: 'VULNERABILITY' },
+              { label: 'Malware', type: 'MALWARE' },
+            ].map(b=>(
+              <CyberButton 
+                key={b.label} 
+                variant="secondary"
+                onClick={()=>{ const alert = simulateThreat(b.type as any); addNotification({ title: `Simulated: ${alert.title}`, message: `${alert.sourceIp} → ${alert.destinationIp}`, severity: alert.severity as any }); load(); }}
+              >
+                Simulate {b.label}
+              </CyberButton>
+            ))}
+          </div>
+          <div className="ml-auto flex items-center gap-2">
+            <RainbowBorderButton variant="small">Flow: Event → Alert → AI → Incident → Response → Report</RainbowBorderButton>
+          </div>
         </div>
-        {[
-          { label: 'Port Scan', type: 'NETWORK_SCAN' },
-          { label: 'Brute Force', type: 'BRUTE_FORCE' },
-          { label: 'Suspicious Login', type: 'SUSPICIOUS_LOGIN' },
-          { label: 'Critical Vuln', type: 'VULNERABILITY' },
-          { label: 'Malware', type: 'MALWARE' },
-        ].map(b=>(
-          <button key={b.label} onClick={()=>{ const alert = simulateThreat(b.type as any); addNotification({ title: `Simulated: ${alert.title}`, message: `${alert.sourceIp} → ${alert.destinationIp}`, severity: alert.severity as any }); load(); }} className="px-3 py-1.5 rounded-lg bg-black/30 border border-white/10 text-[11px] font-medium hover:bg-white/10 transition-colors">
-            Simulate {b.label}
-          </button>
-        ))}
-        <span className="ml-auto text-[11px] text-amber-200/60">Flow: Event → Alert → AI Analysis → Incident → Response → Report</span>
-      </div>
+      </PremiumCard>
 
       {/* Middle Row */}
       <div className="grid grid-cols-12 gap-6">
@@ -110,12 +143,19 @@ export function Dashboard() {
         </div>
       </div>
 
-      {/* Empty state handling */}
+      {/* Empty state handling - 21.dev */}
       {stats.threatCounts.critical===0 && stats.threatCounts.high===0 && (
-        <div className="p-8 rounded-xl bg-emerald-500/5 border border-emerald-500/20 text-center">
+        <PremiumCard gradient="emerald" className="p-8 text-center">
+          <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mx-auto mb-3">
+            <Shield className="w-6 h-6 text-emerald-400" />
+          </div>
           <div className="text-[16px] font-bold text-emerald-300">SYSTEM SECURE</div>
           <div className="text-[13px] text-emerald-200/60 mt-1">No active critical threats detected. Last scan 2 minutes ago. Assets monitored: {stats.assetsMonitored}</div>
-        </div>
+          <div className="mt-4 flex justify-center gap-2">
+            <StatusButton status="online">All Clear</StatusButton>
+            <CyberButton variant="success">Secure</CyberButton>
+          </div>
+        </PremiumCard>
       )}
     </div>
   );
