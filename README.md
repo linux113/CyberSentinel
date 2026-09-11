@@ -153,3 +153,72 @@ src/
 
 ## License
 Demo prototype for college exhibition — not production security software.
+
+---
+
+## 🚀 Making It REAL (Not Just Simulation)
+
+**Want to show real Suricata detection, not just mock?** See `docs/REAL_SETUP.md` and `docs/EXHIBITION_DEMO_SCRIPT.md`
+
+### Real Data Flow
+```
+Kali (Attacker) → Suricata IDS (EVE JSON) → Node.js Backend (EVE Parser) → MongoDB → Socket.IO → Frontend (REAL alerts, no SIM badge) → AI Analysis
+```
+
+### Quick Real Demo (Without Installing Suricata)
+```bash
+# Terminal 1 - Backend watching mock eve.json as if it's Suricata
+cd backend
+npm install
+EVE_MODE=mock npm run dev
+# Backend tails suricata/eve.json and emits real alerts
+
+# Terminal 2 - Simulate Suricata writing real alerts every 5s
+cd backend
+npm run simulate
+# Writes to suricata/eve.json: {"event_type":"alert","src_ip":"192.168.56.50",...}
+
+# Terminal 3 - Frontend
+cd ..
+npm run dev
+# Open http://localhost:5173/dashboard
+# You will see REAL alerts (no SIM badge) appearing in real-time from file
+# Security Score drops, notifications, etc. - proving file-watching pipeline works
+```
+
+### Full Real with Suricata (Ubuntu VM)
+```bash
+# Install Suricata
+sudo apt install suricata -y
+sudo suricata-update
+sudo systemctl start suricata
+
+# Install MongoDB
+# ... see docs/REAL_SETUP.md
+
+# Backend
+cd backend
+cp .env.example .env
+# Edit .env: EVE_JSON_PATH=/var/log/suricata/eve.json, MONGO_URI=...
+npm run dev
+
+# From Kali:
+nmap -sS 192.168.56.10
+# → Real alert appears in dashboard without SIM badge, stored in MongoDB with eveRaw
+```
+
+### What Proves It's Real?
+- No SIM badge on real alerts (vs DEMO badge on simulated)
+- `eve.json` tail shows real Suricata signature
+- Backend logs: "[EVE] REAL Alert created: ALR-..."
+- MongoDB: `db.alerts.find({isSimulation:false})` shows real alerts with original EVE JSON
+- AI analysis uses real evidence from EVE, not mock
+
+See `docs/EXHIBITION_DEMO_SCRIPT.md` for 5-minute exhibition script that shows both DEMO and REAL side-by-side to impress judges.
+
+### Docker One-Command Real Stack
+```bash
+docker-compose up
+# MongoDB + Backend + Frontend + Suricata eve.json volume
+```
+
