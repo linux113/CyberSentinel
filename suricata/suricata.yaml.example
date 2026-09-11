@@ -1,0 +1,30 @@
+# Example Suricata config for CyberSentinel Lab
+# Place at /etc/suricata/suricata.yaml and edit interface
+
+vars:
+  address-groups:
+    HOME_NET: "[192.168.56.0/24]"
+    EXTERNAL_NET: "!$HOME_NET"
+
+af-packet:
+  - interface: enp0s3  # CHANGE to your interface (ip a)
+    cluster-id: 99
+    cluster-type: cluster_flow
+    defrag: yes
+
+outputs:
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: eve.json
+      types:
+        - alert:
+            tagged-packets: yes
+        - http:
+            extended: yes
+        - dns
+        - tls
+        - flow
+
+# For real detection, ensure rules are enabled
+# Run: sudo suricata-update && sudo systemctl restart suricata

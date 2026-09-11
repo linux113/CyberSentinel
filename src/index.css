@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --background: 222 47% 4%;
+    --foreground: 210 40% 92%;
+    --card: 222 32% 10%;
+    --card-foreground: 210 40% 92%;
+    --popover: 222 32% 10%;
+    --popover-foreground: 210 40% 92%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 222 47% 4%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 92%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 32% 17%;
+    --accent-foreground: 210 40% 92%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 199 89% 48%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+}
+
+* {
+  border-color: rgba(255,255,255,0.08);
+}
+
+body {
+  @apply bg-sentinel-bg text-sentinel-text font-sans antialiased;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  background: radial-gradient(1200px 600px at 20% -10%, rgba(14,165,233,0.08), transparent),
+              radial-gradient(1000px 500px at 80% 0%, rgba(239,68,68,0.06), transparent),
+              #070a0f;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-sentinel-bg;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-sentinel-border rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-sentinel-border2;
+}
+
+/* Glass */
+.glass-panel {
+  @apply bg-sentinel-panel/80 backdrop-blur-xl border border-sentinel-border;
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset, 0 4px 24px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.glow-critical {
+  box-shadow: 0 0 0 1px rgba(239,68,68,0.2) inset, 0 0 24px rgba(239,68,68,0.15);
+}
+.glow-high {
+  box-shadow: 0 0 0 1px rgba(249,115,22,0.2) inset, 0 0 24px rgba(249,115,22,0.12);
+}
+
+/* Mono */
+.font-mono {
+  font-variant-ligatures: none;
+}
+
+/* Focus */
+:focus-visible {
+  outline: 1px solid rgba(14,165,233,0.5);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 0.3; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
