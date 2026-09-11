@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getAlerts } from '../services/api';
 import { Alert } from '../lib/types';
-import { Card, CardContent } from '../components/ui/Card';
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge, severityToVariant, riskToVariant } from '../components/ui/Badge';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Search, Filter } from 'lucide-react';

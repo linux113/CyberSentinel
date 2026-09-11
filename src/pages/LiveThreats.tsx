@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getSecurityEvents, getAlerts } from '../services/api';
 import { SecurityEvent, Alert } from '../lib/types';
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge, severityToVariant, riskToVariant } from '../components/ui/Badge';
 import { Activity, Zap } from 'lucide-react';
 import { subscribeRealTime } from '../services/api';

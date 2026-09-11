@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Brain, Send, AlertTriangle, Shield } from 'lucide-react';
 import { getAlerts, getIncidents, getAssets, analyzeAlert } from '../services/api';
 

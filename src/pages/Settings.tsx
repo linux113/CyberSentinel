@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { useApp } from '../store/AppContext';
 import { resetSimulation } from '../services/api';
 

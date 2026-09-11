@@ -1,4 +1,4 @@
-import { Card, CardContent } from '../ui/Card';
+import { Card, CardContent } from "@/components/ui/card";
 import { TrendingUp, TrendingDown, Shield } from 'lucide-react';
 
 export function SecurityPosture({ score, previousScore, change, lastUpdated }: { score: number; previousScore: number; change: number; lastUpdated: string }) {

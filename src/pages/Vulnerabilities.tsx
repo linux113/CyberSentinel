@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getVulnerabilities } from '../services/api';
 import { Vulnerability } from '../lib/types';
-import { Card, CardContent } from '../components/ui/Card';
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge, severityToVariant } from '../components/ui/Badge';
 import { Search } from 'lucide-react';
 import { Link } from 'react-router-dom';

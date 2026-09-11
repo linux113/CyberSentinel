@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getAlert, analyzeAlert, createIncidentFromAlert } from '../services/api';
 import { Alert } from '../lib/types';
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge, severityToVariant, riskToVariant } from '../components/ui/Badge';
 import { Brain, ShieldAlert, Clock, Server, ArrowRight, CheckCircle } from 'lucide-react';
 

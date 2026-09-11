@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getAsset, getAlerts, getVulnerabilities } from '../services/api';
 import { Asset, Alert, Vulnerability } from '../lib/types';
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge, severityToVariant } from '../components/ui/Badge';
 
 export function AssetDetail() {

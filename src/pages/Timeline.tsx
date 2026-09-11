@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getSecurityEvents, getIncidents } from '../services/api';
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { SecurityEvent, Incident } from '../lib/types';
 import { Badge, severityToVariant } from '../components/ui/Badge';
 

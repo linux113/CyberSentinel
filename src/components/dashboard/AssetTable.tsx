@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardContent } from '../ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge, severityToVariant, riskToVariant } from '../ui/Badge';
 import { Asset } from '../../lib/types';
 import { Link } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '../ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Badge, riskToVariant } from '../ui/Badge';
 import { getSecurityEvents } from '../../services/api';
 import { SecurityEvent } from '../../lib/types';

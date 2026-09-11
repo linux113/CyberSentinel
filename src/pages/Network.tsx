@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from 'react';
 import { getAssets, getSecurityEvents } from '../services/api';
 import { Asset, SecurityEvent } from '../lib/types';

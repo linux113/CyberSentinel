@@ -1,4 +1,4 @@
-import { Card, CardContent } from '../ui/Card';
+import { Card, CardContent } from "@/components/ui/card";
 import { AlertTriangle, ShieldAlert, AlertCircle, Info } from 'lucide-react';
 import { clsx } from 'clsx';
 

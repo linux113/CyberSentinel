@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardContent } from '../ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Shield, Globe, Server, Database, Laptop } from 'lucide-react';
 
 export function HealthMap() {

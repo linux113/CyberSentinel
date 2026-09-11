@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardContent } from '../components/ui/Card';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { FileText, Download } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { getDashboardStats, getAlerts, getIncidents, getVulnerabilities } from '../services/api';
