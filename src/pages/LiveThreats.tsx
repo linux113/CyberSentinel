@@ -41,7 +41,7 @@ export function LiveThreats() {
             Live Threats
             <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 font-bold tracking-widest">LIVE</span>
           </h1>
-          <p className="text-[13px] text-sentinel-muted mt-1">Real-time security events • Future: Suricata EVE JSON → Backend → WebSocket</p>
+          <p className="text-[13px] text-sentinel-muted mt-1">Real-time security events Future: Suricata EVE JSON → Backend → WebSocket</p>
         </div>
         <button onClick={()=>{ simulateThreat(); load(); }} className="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08] text-[12px] flex items-center gap-2 hover:bg-white/[0.1]">
           <Zap className="w-3 h-3" /> Simulate Threat
@@ -109,7 +109,7 @@ export function LiveThreats() {
                       {ev.isSimulation && <span className="text-[9px] px-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 uppercase">Sim</span>}
                     </div>
                     <div className="text-[12px] font-medium mt-1">{ev.description}</div>
-                    <div className="text-[11px] font-mono text-sentinel-muted mt-1">{ev.source} → {ev.destination} • Risk {ev.risk}</div>
+                    <div className="text-[11px] font-mono text-sentinel-muted mt-1">{ev.source} → {ev.destination} Risk {ev.risk}</div>
                   </div>
                 ))}
               </div>

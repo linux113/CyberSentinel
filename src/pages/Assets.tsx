@@ -24,7 +24,7 @@ export function AssetsPage() {
       <div className="flex items-start justify-between">
         <div>
           <h1 className="text-[24px] font-bold tracking-tight">Asset Inventory</h1>
-          <p className="text-[13px] text-sentinel-muted mt-1">{assets.length} assets monitored • Servers, endpoints, databases, network, applications, cloud</p>
+          <p className="text-[13px] text-sentinel-muted mt-1">{assets.length} assets monitored Servers, endpoints, databases, network, applications, cloud</p>
         </div>
       </div>
 
@@ -64,7 +64,7 @@ export function AssetsPage() {
                     </div>
                     <div>
                       <div className="font-semibold text-[14px]">{a.name}</div>
-                      <div className="text-[11px] font-mono text-sentinel-dim">{a.ip} • {a.type}</div>
+                      <div className="text-[11px] font-mono text-sentinel-dim">{a.ip} {a.type}</div>
                     </div>
                   </div>
                   <Badge variant={severityToVariant(a.status)}>{a.status}</Badge>
@@ -77,7 +77,7 @@ export function AssetsPage() {
                 <div className="mt-3 flex flex-wrap gap-1">
                   {a.tags.map(t=><span key={t} className="px-1.5 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] text-[10px]">{t}</span>)}
                 </div>
-                <div className="mt-3 text-[11px] font-mono text-sentinel-dim">Last seen {new Date(a.lastSeen).toLocaleTimeString()} • OS: {a.os}</div>
+                <div className="mt-3 text-[11px] font-mono text-sentinel-dim">Last seen {new Date(a.lastSeen).toLocaleTimeString()} OS: {a.os}</div>
               </CardContent>
             </Card>
           </Link>

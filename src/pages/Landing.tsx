@@ -11,11 +11,11 @@ import { AnimatedGradientBackground, GridBackground, CyberGridBackground, Spotli
 export function Landing() {
   return (
     <div className="min-h-screen bg-[#070a0f] text-white relative overflow-hidden">
-      {/* 21.dev Animated Gradient Background - replaces pixel stars */}
+      {/*  Animated Gradient Background - replaces pixel stars */}
       <AnimatedGradientBackground />
       <CyberGridBackground className="opacity-60" />
       
-      {/* Nav - 21.dev style with glass and status */}
+      {/* Nav -  style with glass and status */}
       <nav className="h-[68px] border-b border-white/[0.06] flex items-center justify-between px-8 bg-[#070a0f]/70 backdrop-blur-2xl sticky top-0 z-50 relative">
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
@@ -31,7 +31,7 @@ export function Landing() {
               CyberSentinel
               <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/10 border border-white/10 tracking-widest uppercase">Command Center</span>
             </div>
-            <div className="text-[10px] text-white/40 font-mono">AI-Powered SOC • Real-time • 3D</div>
+            <div className="text-[10px] text-white/40 font-mono">AI-Powered SOC Real-time 3D</div>
           </div>
         </motion.div>
         <motion.div
@@ -47,12 +47,12 @@ export function Landing() {
         </motion.div>
       </nav>
 
-      {/* Hero with Spline + 21.dev buttons */}
+      {/* Hero with Spline +  buttons */}
       <section className="relative px-8 py-12 overflow-hidden">
         <SpotlightBackground />
         
         <div className="max-w-[1300px] mx-auto relative">
-          {/* Top badge - 21.dev style */}
+          {/* Top badge -  style */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -61,7 +61,7 @@ export function Landing() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-[11px] font-medium tracking-wide text-sky-300">
               <span className="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse" />
-              AI-Powered SOC Platform • Real Suricata Integration • 21.dev Premium UI
+              AI-Powered SOC Platform Real Suricata Integration 
             </div>
             <div className="hidden md:flex items-center gap-2 text-[10px] font-mono text-white/30">
               <span className="px-2 py-1 rounded-full bg-white/[0.04] border border-white/[0.06]">MONITOR → DETECT → ANALYZE → RESPOND</span>
@@ -92,7 +92,7 @@ export function Landing() {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 className="text-[18px] leading-relaxed text-white/60 max-w-[600px]"
               >
-                Detect threats. Understand risk. Respond intelligently. Transform security telemetry into prioritized, actionable intelligence with 21.dev premium components and immersive 3D visualization.
+                Detect threats. Understand risk. Respond intelligently. Transform security telemetry into prioritized, actionable intelligence with premium components and immersive 3D visualization.
               </motion.p>
               
               <motion.div
@@ -112,11 +112,11 @@ export function Landing() {
                   </ShimmerButton>
                 </Link>
                 <SpinningBorderButton>
-                  <Sparkles className="w-4 h-4" /> 21.dev UI
+                  <Sparkles className="w-4 h-4" /> Premium UI
                 </SpinningBorderButton>
               </motion.div>
 
-              {/* Workflow with 21.dev cards */}
+              {/* Workflow with cards */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ export function Landing() {
                 <PremiumCard gradient="sky" className="p-6">
                   <div className="text-[11px] tracking-[0.15em] uppercase text-white/40 font-semibold mb-4 flex items-center gap-2">
                     <div className="w-1 h-3 bg-sky-400 rounded-full" />
-                    SOC Workflow — 21.dev Premium • Real-time Ready
+                    SOC Workflow — Real-time Ready
                   </div>
                   <div className="flex items-center gap-2 text-[13px] font-medium flex-wrap">
                     {['Monitor','Detect','Analyze','Prioritize','Investigate','Respond','Resolve','Report'].map((s,i)=>(
@@ -146,7 +146,7 @@ export function Landing() {
                 </PremiumCard>
               </motion.div>
 
-              {/* Metrics - 21.dev MetricCard */}
+              {/* Metrics -  MetricCard */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ export function Landing() {
               </motion.div>
             </div>
 
-            {/* Right - Spline 3D with 21.dev PremiumCard */}
+            {/* Right - Spline 3D with Card */}
             <motion.div
               initial={{ opacity: 0, x: 50, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
@@ -178,13 +178,13 @@ export function Landing() {
                   />
                 </div>
                 
-                {/* Overlay content - 21.dev style */}
+                {/* Overlay content -  style */}
                 <div className="absolute inset-0 p-6 flex flex-col justify-between pointer-events-none">
                   <div className="flex justify-between items-start pointer-events-auto">
-                    <StatusButton status="online">LIVE 3D • Suricata → Real-time</StatusButton>
+                    <StatusButton status="online">LIVE 3D Suricata → Real-time</StatusButton>
                     <div className="flex gap-2">
                       <span className="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-[10px] font-bold tracking-widest text-sky-300 backdrop-blur-xl">INTERACTIVE 3D</span>
-                      <span className="px-2 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-[10px] font-bold text-violet-300">21.DEV</span>
+                      
                     </div>
                   </div>
                   
@@ -198,7 +198,7 @@ export function Landing() {
                         <span className="ml-auto text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">LIVE</span>
                       </div>
                       <div className="text-[11px] text-white/60 leading-relaxed">
-                        Interactive 3D scenes bring SOC to life. Monitor threats in spatial depth, investigate with immersion — 21.dev premium components.
+                        Interactive 3D scenes bring SOC to life. Monitor threats in spatial depth, investigate with immersion — premium components.
                       </div>
                       <div className="mt-3 flex items-center gap-3">
                         <div className="flex gap-2 text-[10px] font-mono">
@@ -223,7 +223,7 @@ export function Landing() {
         </div>
       </section>
 
-      {/* Problem/Solution with 21.dev cards */}
+      {/* Problem/Solution with cards */}
       <section className="px-8 py-16 border-t border-white/[0.06] relative">
         <GridBackground className="opacity-30" />
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-6 relative">
@@ -248,8 +248,8 @@ export function Landing() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <SOCCard status="healthy" title="The Solution" subtitle="21.dev Premium SOC Platform">
-              <p className="text-[18px] leading-snug font-medium">CyberSentinel centralizes detection, analysis and response into one intelligent command center with 21.dev premium UI and 3D immersive experience.</p>
+            <SOCCard status="healthy" title="The Solution" subtitle=" SOC Platform">
+              <p className="text-[18px] leading-snug font-medium">CyberSentinel centralizes detection, analysis and response into one intelligent command center with premium UI and 3D immersive experience.</p>
               <div className="mt-4 space-y-2">
                 {['Unified security posture in seconds','AI-assisted threat analysis with evidence vs inference','Risk-based prioritization','Actionable defensive recommendations'].map((f,i)=>(
                   <motion.div
@@ -265,7 +265,7 @@ export function Landing() {
                 ))}
               </div>
               <div className="mt-4 flex gap-2">
-                <CyberButton variant="success">21.dev UI</CyberButton>
+                <CyberButton variant="success"> UI</CyberButton>
                 <StatusButton status="online">Resolved</StatusButton>
               </div>
             </SOCCard>
@@ -273,7 +273,7 @@ export function Landing() {
         </div>
       </section>
 
-      {/* Features with 21.dev Premium Cards */}
+      {/* Features with Cards */}
       <section className="px-8 py-16 border-t border-white/[0.06] bg-[#0a0f17]/50 relative overflow-hidden">
         <SpotlightBackground className="opacity-50" />
         <div className="max-w-[1200px] mx-auto relative">
@@ -286,7 +286,7 @@ export function Landing() {
             <h2 className="text-[24px] font-bold tracking-tight flex items-center gap-3">
               <div className="w-1 h-6 bg-gradient-to-b from-sky-400 to-blue-600 rounded-full" />
               Platform Capabilities
-              <span className="text-[11px] px-2 py-1 rounded-full bg-white/[0.06] border border-white/[0.08] font-mono font-normal text-white/50">6 CORE MODULES • 21.DEV</span>
+              <span className="text-[11px] px-2 py-1 rounded-full bg-white/[0.06] border border-white/[0.08] font-mono font-normal text-white/50">6 CORE MODULES </span>
             </h2>
             <div className="hidden md:flex gap-2">
               <RainbowBorderButton variant="small">Premium UI</RainbowBorderButton>
@@ -331,7 +331,7 @@ export function Landing() {
         </div>
       </section>
 
-      {/* Real vs Demo with 21.dev Spline */}
+      {/* Real vs Demo with Spline */}
       <section className="px-8 py-16 border-t border-white/[0.06] relative">
         <div className="max-w-[1200px] mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <motion.div
@@ -347,7 +347,7 @@ export function Landing() {
               <div>
                 <div className="font-bold flex items-center gap-2">
                   Real Suricata Integration
-                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-500/20 border border-violet-500/30 text-violet-300">21.DEV</span>
+                  
                 </div>
                 <div className="text-[11px] text-white/50 font-mono">Kali → Suricata → EVE JSON → Backend → 3D Dashboard</div>
               </div>
@@ -359,7 +359,7 @@ export function Landing() {
             </h3>
             
             <p className="text-white/60 leading-relaxed">
-              Demo mode uses simulated telemetry clearly labeled SIMULATION. Real mode tails Suricata EVE JSON, parses alerts, stores in MongoDB, pushes via Socket.IO — no SIM badge, real evidence, real AI analysis — all with 21.dev premium UI.
+              Demo mode uses simulated telemetry clearly labeled SIMULATION. Real mode tails Suricata EVE JSON, parses alerts, stores in MongoDB, pushes via Socket.IO — no SIM badge, real evidence, real AI analysis — all with premium UI.
             </p>
             
             <div className="grid grid-cols-2 gap-3">
@@ -401,19 +401,19 @@ export function Landing() {
               <div className="flex h-full">
                 <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
                   <div className="inline-flex items-center gap-2 px-2 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-[10px] font-bold text-violet-300 mb-4">
-                    <Sparkles className="w-3 h-3" /> 21.DEV PREMIUM
+                    <Sparkles className="w-3 h-3" /> 
                   </div>
                   <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 leading-tight">
                     Interactive 3D SOC<br/>Command Center
                   </h1>
                   <p className="mt-4 text-neutral-300 max-w-lg text-[13px] leading-relaxed">
                     Bring your security operations to life with beautiful 3D threat visualizations. 
-                    Monitor, detect, analyze in immersive space — 21.dev style.
+                    Monitor, detect, analyze in immersive space — style.
                   </p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     <span className="text-[10px] px-3 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 backdrop-blur-xl">REAL MODE</span>
                     <span className="text-[10px] px-3 py-1.5 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30 backdrop-blur-xl">3D READY</span>
-                    <span className="text-[10px] px-3 py-1.5 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30 backdrop-blur-xl">21.DEV</span>
+                    
                   </div>
                   <div className="mt-6">
                     <RainbowBorderButton variant="small">Launch 3D View →</RainbowBorderButton>
@@ -431,7 +431,7 @@ export function Landing() {
         </div>
       </section>
 
-      {/* Demo CTA - 21.dev style with gradient background */}
+      {/* Demo CTA -  style with gradient background */}
       <section className="px-8 py-20 border-t border-white/[0.06] relative overflow-hidden">
         <AnimatedGradientBackground />
         <div className="absolute inset-0 bg-gradient-to-t from-sky-500/[0.08] via-transparent to-transparent pointer-events-none" />
@@ -460,7 +460,7 @@ export function Landing() {
             className="text-white/60 mt-4 leading-relaxed"
           >
             Experience the full workflow: Live Threat → Alert → Evidence → Risk Score → AI Analysis → Incident → Response → Report<br/>
-            <span className="bg-gradient-to-r from-sky-300 via-blue-300 to-violet-300 bg-clip-text text-transparent font-medium">Now with 21.dev premium UI, 3D immersive visualization and real Suricata integration</span>
+            <span className="bg-gradient-to-r from-sky-300 via-blue-300 to-violet-300 bg-clip-text text-transparent font-medium">Now with premium UI, 3D immersive visualization and real Suricata integration</span>
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -489,20 +489,20 @@ export function Landing() {
           >
             <StatusButton status="online">Demo Ready</StatusButton>
             <StatusButton status="online">Real Suricata</StatusButton>
-            <StatusButton status="online">21.dev Premium</StatusButton>
+            <StatusButton status="online">Premium UI</StatusButton>
             <StatusButton status="online">3D + AI</StatusButton>
           </motion.div>
-          <div className="mt-4 text-[11px] text-white/30 font-mono">DEMO ENVIRONMENT • No real auth required • Simulated + Real Suricata • 21.dev Premium UI • 3D Ready</div>
+          <div className="mt-4 text-[11px] text-white/30 font-mono">DEMO ENVIRONMENT • No real auth required Simulated + Real Suricata </div>
         </div>
       </section>
 
       <footer className="border-t border-white/[0.06] px-8 py-6 flex items-center justify-between text-[11px] text-white/40 relative backdrop-blur-xl bg-[#070a0f]/50">
-        <span>© 2026 CyberSentinel • AI-Powered Cybersecurity Command Center • Built for Arena AI • 21.dev Premium • 3D + Real-time + AI</span>
+        <span>© 2026 CyberSentinel AI-Powered Cybersecurity Command Center Built for Arena AI • Premium SOC </span>
         <span className="font-mono hidden md:flex items-center gap-2">
           <span className="px-2 py-1 rounded-full bg-white/[0.04] border border-white/[0.06]">Node.js + Express</span>
           <span className="px-2 py-1 rounded-full bg-white/[0.04] border border-white/[0.06]">MongoDB</span>
           <span className="px-2 py-1 rounded-full bg-white/[0.04] border border-white/[0.06]">Suricata</span>
-          <span className="px-2 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-300">21.dev</span>
+          
         </span>
       </footer>
     </div>

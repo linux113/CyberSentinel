@@ -64,7 +64,7 @@ export function ReportsPage() {
 
       {stats && (
         <Card>
-          <CardHeader><CardTitle>Sample Report Preview — CyberSentinel Security Report • Sept 1–10</CardTitle></CardHeader>
+          <CardHeader><CardTitle>Sample Report Preview — CyberSentinel Security Report Sept 1–10</CardTitle></CardHeader>
           <CardContent className="space-y-4 text-[13px]">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="p-3 rounded-lg bg-white/[0.03] border border-white/[0.06]"><div className="text-sentinel-muted text-[11px] uppercase">Total Events</div><div className="font-mono font-bold text-[18px] mt-1">{stats.totalEvents.toLocaleString()}</div></div>

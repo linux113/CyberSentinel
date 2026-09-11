@@ -16,7 +16,7 @@ export function NetworkPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-[24px] font-bold tracking-tight">Network Monitoring</h1>
-        <p className="text-[13px] text-sentinel-muted mt-1">Visual infrastructure • Connections • Traffic • Suspicious activity</p>
+        <p className="text-[13px] text-sentinel-muted mt-1">Visual infrastructure Connections Traffic Suspicious activity</p>
       </div>
 
       <div className="grid grid-cols-12 gap-6">
@@ -28,8 +28,8 @@ export function NetworkPage() {
                 <div className="absolute inset-0 flex flex-col items-center justify-between py-8">
                   {[
                     { label: 'Internet', color: 'bg-sky-500' },
-                    { label: 'Firewall • WAF', color: 'bg-emerald-500', sub: '192.168.1.1' },
-                    { label: 'Router • VPN GW', color: 'bg-amber-500', sub: 'Internal Network 192.168.0.0/16' },
+                    { label: 'Firewall WAF', color: 'bg-emerald-500', sub: '192.168.1.1' },
+                    { label: 'Router VPN GW', color: 'bg-amber-500', sub: 'Internal Network 192.168.0.0/16' },
                     { label: 'Servers (6)', color: assets.filter(a=>a.status==='CRITICAL').length>0?'bg-red-500':'bg-emerald-500', sub: assets.filter(a=>a.type==='SERVER').map(a=>a.name).slice(0,3).join(', ') },
                     { label: 'Databases (2)', color: 'bg-orange-500', sub: 'DB-01, REDIS-01' },
                     { label: 'Endpoints (12)', color: 'bg-yellow-500', sub: 'HR-PC-07, EMP-PC-042, etc.' },
@@ -56,7 +56,7 @@ export function NetworkPage() {
               {events.slice(0,10).map(ev=>(
                 <div key={ev.id} className="p-2 rounded-lg bg-white/[0.03] border border-white/[0.06] text-[11px] font-mono">
                   <div className="flex justify-between"><span className="text-sentinel-muted">{ev.source}</span><span>→</span><span className="text-sentinel-text">{ev.destination}</span></div>
-                  <div className="text-[11px] text-sentinel-dim mt-1">{ev.type} • Risk {ev.risk}</div>
+                  <div className="text-[11px] text-sentinel-dim mt-1">{ev.type} Risk {ev.risk}</div>
                 </div>
               ))}
             </CardContent>

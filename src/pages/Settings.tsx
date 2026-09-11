@@ -9,7 +9,7 @@ export function SettingsPage() {
     <div className="space-y-6 max-w-[800px]">
       <div>
         <h1 className="text-[24px] font-bold tracking-tight">Settings</h1>
-        <p className="text-[13px] text-sentinel-muted mt-1">Platform configuration • Future backend integration ready</p>
+        <p className="text-[13px] text-sentinel-muted mt-1">Platform configuration Future backend integration ready</p>
       </div>
 
       <Card>

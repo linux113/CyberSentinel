@@ -38,8 +38,8 @@ export function AlertDetail() {
         <Link to="/alerts" className="hover:text-white flex items-center gap-1"><ArrowRight className="w-3 h-3 rotate-180" /> Alerts</Link>
         <span>→</span>
         <span className="text-white font-mono">{alert.id}</span>
-        {alert.isSimulation && <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[10px] uppercase font-bold backdrop-blur-xl">Simulation — Not Real Telemetry • 21.dev</span>}
-        {!alert.isSimulation && <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] uppercase font-bold">REAL • Suricata • 21.dev</span>}
+        {alert.isSimulation && <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[10px] uppercase font-bold backdrop-blur-xl">Simulation — Not Real Telemetry </span>}
+        {!alert.isSimulation && <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] uppercase font-bold">REAL Suricata </span>}
       </div>
 
       <div className="flex items-start justify-between gap-6">
@@ -48,7 +48,7 @@ export function AlertDetail() {
             {alert.title}
             <Badge variant={severityToVariant(alert.severity)}>{alert.severity}</Badge>
             <Badge variant={riskToVariant(alert.riskScore)}>Risk {alert.riskScore}</Badge>
-            <span className="text-[10px] px-2 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300">21.DEV PREMIUM</span>
+            
           </h1>
           <p className="text-[13px] text-sentinel-muted mt-2 max-w-[700px]">{alert.description}</p>
         </div>
@@ -66,7 +66,7 @@ export function AlertDetail() {
         {/* Left */}
         <div className="col-span-12 lg:col-span-8 space-y-6">
           <PremiumCard gradient="default">
-            <CardHeader><CardTitle>Overview • 21.dev</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Overview </CardTitle></CardHeader>
             <CardContent className="grid grid-cols-2 gap-4 text-[13px]">
               <div className="space-y-3">
                 <div><span className="text-sentinel-muted">Alert ID:</span> <span className="font-mono px-2 py-0.5 rounded bg-white/[0.06] border border-white/[0.08]">{alert.id}</span></div>
@@ -86,12 +86,12 @@ export function AlertDetail() {
           </PremiumCard>
 
           <PremiumCard gradient="sky">
-            <CardHeader><CardTitle>Why Was This Detected? • Evidence</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Why Was This Detected? Evidence</CardTitle></CardHeader>
             <CardContent className="space-y-4">
               <p className="text-[13px] leading-relaxed p-3 rounded-xl bg-white/[0.03] border border-white/[0.06] backdrop-blur-xl">{alert.evidence.description}</p>
               <div>
                 <div className="text-[11px] uppercase tracking-wide font-semibold text-sentinel-muted mb-2 flex items-center gap-2">
-                  <div className="w-1 h-3 bg-sky-400 rounded-full" /> Indicators • 21.dev
+                  <div className="w-1 h-3 bg-sky-400 rounded-full" /> Indicators 
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {alert.evidence.indicators.map((ind,i)=>(
@@ -101,7 +101,7 @@ export function AlertDetail() {
               </div>
               {alert.evidence.rawLogSnippet && (
                 <div>
-                  <div className="text-[11px] uppercase tracking-wide font-semibold text-sentinel-muted mb-2">Raw Log Snippet • Real Evidence</div>
+                  <div className="text-[11px] uppercase tracking-wide font-semibold text-sentinel-muted mb-2">Raw Log Snippet Real Evidence</div>
                   <pre className="p-4 rounded-xl bg-black/60 border border-white/[0.06] text-[11px] font-mono overflow-x-auto text-sentinel-muted backdrop-blur-xl">{alert.evidence.rawLogSnippet}</pre>
                 </div>
               )}
@@ -111,7 +111,7 @@ export function AlertDetail() {
           {alert.aiAnalysis && (
             <PremiumCard gradient={alert.severity==='CRITICAL'?'red':alert.severity==='HIGH'?'amber':'sky'} className="overflow-hidden">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2"><Brain className="w-4 h-4 text-sky-400" /> AI Threat Analysis — Confidence {alert.aiAnalysis.confidence}% • 21.dev Premium</CardTitle>
+                <CardTitle className="flex items-center gap-2"><Brain className="w-4 h-4 text-sky-400" /> AI Threat Analysis — Confidence {alert.aiAnalysis.confidence}% </CardTitle>
                 <span className="text-[11px] font-mono text-sentinel-dim px-2 py-1 rounded-full bg-white/[0.04] border border-white/[0.06]">{new Date(alert.aiAnalysis.timestamp).toLocaleString()}</span>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -128,13 +128,13 @@ export function AlertDetail() {
 
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10 backdrop-blur-xl">
-                    <h4 className="text-[11px] font-bold uppercase tracking-wide text-emerald-300 mb-2">Observed Evidence • Real</h4>
+                    <h4 className="text-[11px] font-bold uppercase tracking-wide text-emerald-300 mb-2">Observed Evidence Real</h4>
                     <ul className="space-y-2">
                       {alert.aiAnalysis.observedEvidence.map((e,i)=><li key={i} className="text-[12px] flex gap-2 p-2 rounded-lg bg-white/[0.03] border border-white/[0.04] hover:bg-white/[0.05] transition-colors"><CheckCircle className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />{e}</li>)}
                     </ul>
                   </div>
                   <div className="p-4 rounded-xl bg-amber-500/5 border border-amber-500/10 backdrop-blur-xl">
-                    <h4 className="text-[11px] font-bold uppercase tracking-wide text-amber-300 mb-2">Inference (Not Confirmed) • AI</h4>
+                    <h4 className="text-[11px] font-bold uppercase tracking-wide text-amber-300 mb-2">Inference (Not Confirmed) AI</h4>
                     <ul className="space-y-2">
                       {alert.aiAnalysis.inference.map((e,i)=><li key={i} className="text-[12px] flex gap-2 p-2 rounded-lg bg-white/[0.03] border border-white/[0.04]"><span className="w-1.5 h-1.5 rounded-full bg-amber-400 mt-2 shrink-0" />{e}</li>)}
                     </ul>
@@ -142,7 +142,7 @@ export function AlertDetail() {
                 </div>
 
                 <GlassCard className="p-4 border-red-500/20 bg-red-500/5">
-                  <h4 className="text-[11px] font-bold tracking-wide uppercase text-red-300 mb-2">Risk Assessment • 21.dev</h4>
+                  <h4 className="text-[11px] font-bold tracking-wide uppercase text-red-300 mb-2">Risk Assessment </h4>
                   <p className="text-[13px] leading-relaxed">{alert.aiAnalysis.riskAssessment}</p>
                 </GlassCard>
 
@@ -152,7 +152,7 @@ export function AlertDetail() {
                     <p className="text-[13px] leading-relaxed">{alert.aiAnalysis.potentialImpact}</p>
                   </GlassCard>
                   <GlassCard className="p-4">
-                    <h4 className="text-[11px] font-bold tracking-wide uppercase text-emerald-300 mb-2">Recommended Actions • 21.dev</h4>
+                    <h4 className="text-[11px] font-bold tracking-wide uppercase text-emerald-300 mb-2">Recommended Actions </h4>
                     <ol className="space-y-2">
                       {alert.aiAnalysis.recommendedActions.map((a,i)=>(
                         <li key={i} className="flex gap-3 text-[12px] p-2 rounded-lg bg-white/[0.03] border border-white/[0.04] hover:bg-white/[0.05] transition-colors"><span className="w-6 h-6 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-[11px] font-mono shrink-0 text-white">{i+1}</span><span>{a}</span></li>
@@ -162,7 +162,7 @@ export function AlertDetail() {
                 </div>
 
                 <div className="text-[11px] text-sentinel-dim italic border-t border-white/[0.06] pt-4 p-3 rounded-xl bg-amber-500/5 border border-amber-500/10">
-                  <span className="font-bold text-amber-300">AI Safety:</span> This analysis distinguishes observed evidence vs inference. It does not claim attack is confirmed unless evidence supports it. If insufficient evidence, it states "Insufficient evidence to determine conclusively." • 21.dev Premium
+                  <span className="font-bold text-amber-300">AI Safety:</span> This analysis distinguishes observed evidence vs inference. It does not claim attack is confirmed unless evidence supports it. If insufficient evidence, it states "Insufficient evidence to determine conclusively." 
                 </div>
               </CardContent>
             </PremiumCard>
@@ -172,7 +172,7 @@ export function AlertDetail() {
         {/* Right */}
         <div className="col-span-12 lg:col-span-4 space-y-4">
           <PremiumCard gradient="default">
-            <CardHeader><CardTitle>Workflow • 21.dev</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Workflow </CardTitle></CardHeader>
             <CardContent className="space-y-3">
               {[
                 { label: 'Live Threat', done: true },
@@ -196,7 +196,7 @@ export function AlertDetail() {
           </PremiumCard>
 
           <PremiumCard gradient="sky">
-            <CardHeader><CardTitle>Recommended Response • 21.dev</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Recommended Response </CardTitle></CardHeader>
             <CardContent className="space-y-2">
               {(alert.recommendation || []).map((r,i)=>(
                 <div key={i} className="flex gap-2 text-[12px] p-2.5 rounded-xl bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.05] hover:border-white/[0.08] transition-all backdrop-blur-xl"><span className="text-sky-400 mt-0.5">•</span><span>{r}</span></div>
@@ -205,7 +205,7 @@ export function AlertDetail() {
           </PremiumCard>
 
           <PremiumCard gradient="violet">
-            <CardHeader><CardTitle>Next Steps • 21.dev Premium</CardTitle></CardHeader>
+            <CardHeader><CardTitle>Next Steps </CardTitle></CardHeader>
             <CardContent className="space-y-3">
               <ShimmerButton variant="secondary" className="w-full justify-start" onClick={handleAnalyze}>
                 <Brain className="w-4 h-4" />

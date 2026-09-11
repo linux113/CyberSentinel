@@ -34,12 +34,12 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6">
-      {/* Header - 21.dev style */}
+      {/* Header -  style */}
       <div className="flex items-start justify-between">
         <div>
           <h1 className="text-[26px] font-bold tracking-tight flex items-center gap-3">
             Security Overview
-            <span className="text-[10px] px-2 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300 font-bold tracking-widest">21.DEV PREMIUM</span>
+            
           </h1>
           <p className="text-[13px] text-sentinel-muted mt-1 flex items-center gap-2">
             What is happening? How serious? What is affected? What should I do?
@@ -47,7 +47,7 @@ export function Dashboard() {
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <StatusButton status="online">Live monitoring • {stats.assetsMonitored} assets • {stats.activeThreats} threats</StatusButton>
+          <StatusButton status="online">Live monitoring {stats.assetsMonitored} assets {stats.activeThreats} threats</StatusButton>
           <CyberButton variant="primary" icon={<Activity className="w-3.5 h-3.5" />}>Live</CyberButton>
         </div>
       </div>
@@ -86,7 +86,7 @@ export function Dashboard() {
         </div>
       </div>
 
-      {/* Demo Controls - 21.dev style with CyberButton */}
+      {/* Demo Controls -  style with CyberButton */}
       <PremiumCard gradient="amber" className="p-4">
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2 text-[12px] font-semibold text-amber-300">
@@ -94,7 +94,7 @@ export function Dashboard() {
               <Zap className="w-3.5 h-3.5" />
             </div>
             DEMO MODE — Simulate Threats:
-            <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-300">21.DEV</span>
+            
           </div>
           <div className="flex flex-wrap gap-2">
             {[
@@ -143,7 +143,7 @@ export function Dashboard() {
         </div>
       </div>
 
-      {/* Empty state handling - 21.dev */}
+      {/* Empty state handling -  */}
       {stats.threatCounts.critical===0 && stats.threatCounts.high===0 && (
         <PremiumCard gradient="emerald" className="p-8 text-center">
           <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mx-auto mb-3">

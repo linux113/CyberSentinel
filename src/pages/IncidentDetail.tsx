@@ -128,7 +128,7 @@ export function IncidentDetail() {
               {relatedAssets.map(a=>(
                 <Link key={a.id} to={`/assets/${a.id}`} className="block p-2 rounded-lg bg-white/[0.03] border border-white/[0.06] hover:bg-white/[0.05]">
                   <div className="font-medium text-[13px]">{a.name}</div>
-                  <div className="text-[11px] font-mono text-sentinel-muted">{a.ip} • Risk {a.riskScore}</div>
+                  <div className="text-[11px] font-mono text-sentinel-muted">{a.ip} Risk {a.riskScore}</div>
                 </Link>
               ))}
             </CardContent>

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { Spotlight } from './spotlight';
 
-// 21.dev inspired - Premium Card with gradient border and hover effects
+//  inspired - Premium Card with gradient border and hover effects
 export function PremiumCard({ 
   children, 
   className,
@@ -105,7 +105,7 @@ export function SOCCard({
   );
 }
 
-// Glass Card with animated border - 21.dev trending
+// Glass Card with animated border -  trending
 export function GlassCard({ 
   children, 
   className,
@@ -136,7 +136,7 @@ export function GlassCard({
   );
 }
 
-// Metric Card - For dashboard numbers with 21.dev style
+// Metric Card - For dashboard numbers with style
 export function MetricCard({ 
   label, 
   value, 

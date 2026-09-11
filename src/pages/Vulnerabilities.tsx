@@ -84,7 +84,7 @@ export function VulnerabilitiesPage() {
                 <tr key={v.id} className="hover:bg-white/[0.03]">
                   <td className="px-4 py-3">
                     <div className="font-medium">{v.name}</div>
-                    <div className="text-[11px] font-mono text-sentinel-dim">{v.cve} • {v.id}</div>
+                    <div className="text-[11px] font-mono text-sentinel-dim">{v.cve} {v.id}</div>
                   </td>
                   <td className="px-3 py-3"><Link to={`/assets/${v.assetId}`} className="text-sky-400 hover:text-sky-300">{v.asset}</Link></td>
                   <td className="px-3 py-3"><Badge variant={severityToVariant(v.severity)}>{v.severity}</Badge></td>

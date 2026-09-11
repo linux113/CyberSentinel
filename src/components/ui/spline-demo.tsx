@@ -26,7 +26,7 @@ export function SplineSceneBasic() {
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <span className="text-[11px] tracking-[0.15em] uppercase text-white/50 font-semibold">CyberSentinel • 3D Threat Visualization</span>
+              <span className="text-[11px] tracking-[0.15em] uppercase text-white/50 font-semibold">CyberSentinel 3D Threat Visualization</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 leading-tight">
               Interactive 3D<br/>Security Operations
@@ -74,7 +74,7 @@ export function CyberSentinelSplineHero() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-[11px] font-medium tracking-wide text-sky-300">
               <Zap className="w-3 h-3" />
-              AI-Powered • Real-time • 3D Visualization
+              AI-Powered Real-time 3D Visualization
             </div>
             
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-[0.9]">

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import { ArrowRight, Shield, Zap } from 'lucide-react';
 
-// 21.dev inspired - Rainbow Borders Button
+//  inspired - Rainbow Borders Button
 export function RainbowBorderButton({ 
   children, 
   className,
@@ -34,7 +34,7 @@ export function RainbowBorderButton({
   );
 }
 
-// Spinning Border Button - 21.dev trending
+// Spinning Border Button -  trending
 export function SpinningBorderButton({ 
   children, 
   className,
@@ -60,7 +60,7 @@ export function SpinningBorderButton({
   );
 }
 
-// Shimmer Button - 21.dev style with shimmer effect
+// Shimmer Button -  style with shimmer effect
 export function ShimmerButton({ 
   children, 
   className,
@@ -99,7 +99,7 @@ export function ShimmerButton({
   );
 }
 
-// Hover Shine Button - 21.dev trending
+// Hover Shine Button -  trending
 export function HoverShineButton({ 
   children, 
   className,
@@ -126,7 +126,7 @@ export function HoverShineButton({
   );
 }
 
-// Gradient Button with animated gradient - 21.dev style
+// Gradient Button with animated gradient -  style
 export function GradientButton({ 
   children, 
   className,
@@ -161,7 +161,7 @@ export function GradientButton({
   );
 }
 
-// Cyber Button - Unique for CyberSentinel, 21.dev inspired with grid and glow
+// Cyber Button - Unique for CyberSentinel,  inspired with grid and glow
 export function CyberButton({ 
   children, 
   className,
@@ -204,7 +204,7 @@ export function CyberButton({
   );
 }
 
-// Magnetic Button - 21.dev trending with magnetic hover
+// Magnetic Button -  trending with magnetic hover
 export function MagneticButton({ 
   children, 
   className,

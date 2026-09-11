@@ -93,7 +93,7 @@ export function AlertsPage() {
                         {a.isSimulation && <span className="text-[9px] px-1 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 uppercase font-bold">Sim</span>}
                       </div>
                       <div className="font-medium group-hover:text-white transition-colors truncate max-w-[260px]">{a.title}</div>
-                      <div className="text-[11px] text-sentinel-dim truncate max-w-[260px]">{a.sensor} • {a.signature}</div>
+                      <div className="text-[11px] text-sentinel-dim truncate max-w-[260px]">{a.sensor} {a.signature}</div>
                     </Link>
                   </td>
                   <td className="px-3 py-3 font-mono text-[11px]">

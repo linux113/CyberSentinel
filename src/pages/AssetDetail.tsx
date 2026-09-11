@@ -38,7 +38,7 @@ export function AssetDetail() {
             <Badge variant={severityToVariant(asset.status)}>{asset.status}</Badge>
             <span className={`font-mono text-[14px] px-2 py-1 rounded-lg border ${asset.riskScore>=80?'bg-red-500/10 border-red-500/20 text-red-400': asset.riskScore>=60?'bg-orange-500/10 border-orange-500/20 text-orange-400':'bg-emerald-500/10 border-emerald-500/20 text-emerald-400'}`}>Risk {asset.riskScore}</span>
           </h1>
-          <p className="text-[13px] text-sentinel-muted mt-1 font-mono">{asset.ip} • {asset.type} • {asset.os}</p>
+          <p className="text-[13px] text-sentinel-muted mt-1 font-mono">{asset.ip} {asset.type} {asset.os}</p>
         </div>
       </div>
 

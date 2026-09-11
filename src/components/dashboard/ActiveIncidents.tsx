@@ -25,7 +25,7 @@ export function ActiveIncidents({ incidents }: { incidents: Incident[] }) {
                   <div className="text-[13px] font-medium mt-1 truncate">{inc.title}</div>
                   <div className="flex items-center gap-2 mt-1 text-[11px] text-sentinel-muted">
                     <Clock className="w-3 h-3" />
-                    {new Date(inc.createdAt).toLocaleTimeString()} • Risk {inc.riskScore}
+                    {new Date(inc.createdAt).toLocaleTimeString()} Risk {inc.riskScore}
                   </div>
                 </div>
                 <div className={`w-2 h-2 rounded-full mt-2 ${inc.severity==='CRITICAL'?'bg-red-500 animate-pulse-subtle': inc.severity==='HIGH'?'bg-orange-500':'bg-yellow-500'}`} />

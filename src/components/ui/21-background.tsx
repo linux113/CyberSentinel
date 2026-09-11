@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
-// 21.dev inspired - Animated Gradient Background (replaces pixel stars)
+//  inspired - Animated Gradient Background (replaces pixel stars)
 export function AnimatedGradientBackground({ className }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0 overflow-hidden", className)}>
@@ -35,7 +35,7 @@ export function AnimatedGradientBackground({ className }: { className?: string }
   );
 }
 
-// Grid Background - 21.dev trending
+// Grid Background -  trending
 export function GridBackground({ className }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0", className)}>
@@ -46,7 +46,7 @@ export function GridBackground({ className }: { className?: string }) {
   );
 }
 
-// Dot Background - 21.dev style
+// Dot Background -  style
 export function DotBackground({ className }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0", className)}>
@@ -80,7 +80,7 @@ export function CyberGridBackground({ className }: { className?: string }) {
   );
 }
 
-// Spotlight Background - 21.dev style with multiple spotlights
+// Spotlight Background -  style with multiple spotlights
 export function SpotlightBackground({ className }: { className?: string }) {
   return (
     <div className={cn("absolute inset-0 overflow-hidden", className)}>

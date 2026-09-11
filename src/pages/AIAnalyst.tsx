@@ -162,7 +162,7 @@ export function AIAnalyst() {
           <Card className="h-[700px] flex flex-col">
             <CardHeader>
               <CardTitle className="flex items-center gap-2"><Brain className="w-4 h-4 text-violet-400" /> Analyst Workspace</CardTitle>
-              <div className="text-[11px] text-sentinel-dim">Evidence-based • No fabrication • Defensive only</div>
+              <div className="text-[11px] text-sentinel-dim">Evidence-based No fabrication Defensive only</div>
             </CardHeader>
             <CardContent className="flex-1 overflow-y-auto space-y-4 p-4">
               {messages.map(m=>(
